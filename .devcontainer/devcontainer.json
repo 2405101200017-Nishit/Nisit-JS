@@ -1,0 +1,21 @@
+{
+  "name": "Nisit-JS Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.profiles.linux": {
+      "bash": {
+        "path": "/bin/bash"
+      }
+    }
+  },
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"
+  ],
+  "remoteUser": "node",
+  "workspaceFolder": "/workspace"
+}
