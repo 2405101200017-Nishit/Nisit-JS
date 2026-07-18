@@ -1,2 +1,4 @@
 # Nisit-JS
-Learning JavaScript
+
+Learning JavaScript.
+Author - Nisit K.
