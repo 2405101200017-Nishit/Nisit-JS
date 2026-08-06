@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AJAX</title>
+<style>
+  body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f0f0;
+  }
+
+  .card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 24px;
+    text-align: center;
+    width: 250px;
+  }
+
+  .card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .card h2 {
+    margin: 12px 0 4px;
+  }
+
+  .card p {
+    color: #555;
+    margin: 4px 0;
+  }
+
+  #button {
+    margin-top: 16px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background: black;
+    color: white;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <img id="photo" src="" alt="profile photo">
+  <h2 id="name"></h2>
+  <p id="username"></p>
+  <p id="followers"></p>
+  <button id="button">Load Profile</button>
+</div>
+
+<script>
+  // const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+// const button = document.getElementById('button');
+
+// button.addEventListener('click', () => {
+//   const xhr = new XMLHttpRequest();
+//   xhr.open('GET', requestUrl);
+
+//   xhr.onreadystatechange = function () {
+//     if (xhr.readyState === 4 && xhr.status === 200) {
+//       const data = JSON.parse(this.responseText);
+
+//       document.getElementById('photo').src = data.avatar_url;
+//       document.getElementById('name').innerText = data.name;
+//       document.getElementById('username').innerText = '@' + data.login;
+//       document.getElementById('followers').innerText = `Followers: ${data.followers}`;
+//     }
+//   };
+
+//   xhr.send();
+// });
+
+const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+const button = document.getElementById('button')
+
+button.addEventListener('click', () => {
+  const xhr = new XMLHttpRequest()
+  xhr.open('GET', requestUrl)
+
+    
+  xhr.onreadystatechange = function() {
+
+    
+    if(xhr.readyState === 4){
+      const data = JSON.parse(this.responseText)
+      document.getElementById('photo').src = data.avatar_url
+      document.getElementById('followers').innerText = `Followers: ${data.followers}`
+    }
+  }
+  xhr.send()
+})
+</script>
+</body>
+</html>
