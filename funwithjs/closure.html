@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body style="background-color: #313131;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+
+    // ** LEXICAL SCOPING **
+    // function init(){
+    //     let name = 'Mozilla'
+    //     function displayName(){
+    //         console.log(name);
+            
+    //     }
+    //     displayName()
+    // }
+    // init()
+
+
+    // ** LEXICAL SCOPING **
+
+
+    // function outer(){
+    //     let username = "Nishit"
+    //     console.log("OUTER", secret);
+        
+    //     function inner(){
+    //         let secret = 'my123'
+    //         console.log("Inner", username);
+            
+    //     }
+    //     function innerTwo(){
+    //        console.log("Inner two", username);
+    //        console.log(secret);
+           
+            
+    //     }
+    //     inner()
+    //     innerTwo()
+    // }
+    // outer()
+    // console.log("TOO OUTER",username);
+
+    // function makeFunc(){
+    //     const name = 'Mozilla'
+    //     function displayName(){
+    //         console.log(name);
+    //     }
+    //     return displayName
+    // }
+
+    // const myFunc = makeFunc()
+    // myFunc()
+</script>
+<script>
+// const Orangebtn = document.getElementById('orange')
+// Orangebtn.addEventListener('click', function(){
+//     document.body.style.backgroundColor = "Orange"
+// })
+// const Greenbtn = document.getElementById('green')
+// Greenbtn.addEventListener('click', function(){
+//     document.body.style.backgroundColor = "Green"
+// })
+
+
+function clickHandler(color){
+    //document.body.style.backgroundColor = `${color}`
+   
+   return function(){
+    document.body.style.backgroundColor = `${color}`
+   }
+}
+
+document.getElementById("orange").addEventListener('click', clickHandler('orange'))
+document.getElementById("green").addEventListener('click', clickHandler('green'))
+</script>
+</html>
