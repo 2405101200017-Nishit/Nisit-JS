@@ -2,7 +2,7 @@
 //  unpack values from array, or properties from objects, into distinct variables
 
 const user = {
-    name: "Nishit",
+    firstname: "Nishit",
     lastname: "Kakkad",
     age: 20,
     profession: "Full Stack Dev"

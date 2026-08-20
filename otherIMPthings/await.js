@@ -27,8 +27,12 @@
 
 const Log = new Promise((resolve,reject) => {
     setTimeout(function(){
-        resolve()
-        console.log("Hello Nishit")
+        resolve({
+            name: 'nishit'
+            
+        })
+        console.log("Hello")
+        
     },1000)
     
 })
@@ -38,6 +42,9 @@ async function getLog(){
         const greeting = await Log
         console.log(greeting);
         
+
+
+        
     }
     catch (error){
         console.log(error);
@@ -45,3 +52,5 @@ async function getLog(){
     }
     
 }
+
+getLog()
